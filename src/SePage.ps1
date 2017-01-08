@@ -48,7 +48,7 @@ function Get-SePageUrl
 <#
 .SYNOPSIS
 
-Gets the page utl
+Gets the page url
 
 .DESCRIPTION
 

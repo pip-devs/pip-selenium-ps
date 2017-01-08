@@ -513,47 +513,6 @@ PS> Get-SeAttribute -Element $element -Attribute "name"
     end {}
 }
 
-function Get-SeAttribute
-{
-<#
-.SYNOPSIS
-
-Gets an element attribute
-
-.DESCRIPTION
-
-Get-SeAttribute gets attribute from specified element by its name
-
-.PARAMETER Element
-
-An element to get attribute from
-
-.PARAMETER Attribute
-
-An attribute name
-
-.EXAMPLE
-
-PS> Get-SeAttribute -Element $element -Attribute "name"
-
-#>
-    [CmdletBinding()]
-    param
-    (
-        [Parameter(Position=0, Mandatory=$true, ValueFromPipelineByPropertyName=$true)]
-        [OpenQA.Selenium.IWebElement] $Element,
-
-        [Parameter(Position=1, Mandatory=$true, ValueFromPipeline=$true, ValueFromPipelineByPropertyName=$true)]
-        [string] $Attribute
-    )
-    begin {}
-    process 
-    {
-        Write-Output $Element.GetAttribute($Attribute)
-    }
-    end {}
-}
-
 function Get-SeText
 {
 <#

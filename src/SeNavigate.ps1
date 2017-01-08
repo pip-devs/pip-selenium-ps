@@ -124,42 +124,6 @@ PS> Move-SeBack
 }
 
 
-function Move-SeForward
-{
-<#
-.SYNOPSIS
-
-Moves forward through page history
-
-.DESCRIPTION
-
-Move-SeForward moves forward through page history
-
-.PARAMETER Driver
-
-An optional object reference to started selenium web driver (Default: current driver)
-
-.EXAMPLE
-
-PS> Move-SeForward
-
-#>
-    [CmdletBinding()]
-    param
-    (
-        [Parameter(Position=0, Mandatory=$false, ValueFromPipelineByPropertyName=$true)]
-        [OpenQA.Selenium.IWebDriver] $Driver
-    )
-    begin {}
-    process 
-    {
-        $Driver = if ($Driver -ne $null) {$Driver} else {$SeDriver}
-
-        $null = $Driver.Navigate().Forward()
-    }
-    end {}
-}
-
 function Reset-SePage
 {
 <#

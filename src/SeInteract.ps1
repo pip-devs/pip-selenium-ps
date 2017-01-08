@@ -53,7 +53,7 @@ function Submit-SeForm
 <#
 .SYNOPSIS
 
-Submits form
+Submits a form
 
 .DESCRIPTION
 

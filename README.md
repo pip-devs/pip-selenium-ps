@@ -13,9 +13,45 @@ The module allows to perform most operations supported by .NET web driver:
 * Send clicks or keystrokes, submit forms
 * Manage alert popups
 
+## Commands
+
+* **Clear-SeElement** - Clears element content
+* **Find-SeElement** - Finds DOM element by specified criteria
+* **Find-SeElements** - Finds DOM elements by specified criteria
+* **Get-SeAttribute** - Gets an element attribute
+* **Get-SeCssProperty** - Gets an element CSS property
+* **Get-SeDriver** - Gets currently loaded web driver
+* **Get-SePageSource** - Gets the page source
+* **Get-SePageTitle** - Gets the page title
+* **Get-SePageUrl** - Gets the page url
+* **Get-SeText** - Gets an element text
+* **Move-SeBack** - Moves backward through page history
+* **Move-SeForward** - Moves forward through page history
+* **Open-SePage** - Opens a new page by url
+* **Reset-SePage** - Refreshes the current page
+* **Select-SeDriver** - Selects default web driver
+* **Send-SeAlertAccept** - Accepts alert popup
+* **Send-SeAlertDismiss** - Dismisses alert popup
+* **Send-SeAlertKeys** - Sends keystrokes to alert popup
+* **Send-SeClick** - Clicks an element
+* **Send-SeKeys** - Send key strokes
+* **Start-SeDriver** - Starts selenium web driver
+* **Stop-SeDriver** - Stops selenium web driver
+* **Submit-SeForm** - Submits a form
+* **Switch-SeAlert** - Switches to alert popup
+* **Switch-SeDefault** - Switches to default content
+* **Switch-SeFrame** - Switches to frame in the web browser
+* **Switch-SeWindow** - Switches windows in the web browser
+* **Wait-SeElement** - Wait until specified dynamic DOM element appear on the page
+
 ## Installation
 
 * Checkout the module from github repository at https://github.com/pip-devs/pip-selenium-ps
+
+```bash
+git clone https://github.com/pip-devs/pip-selenium-ps
+```
+
 * Add parent folder to **PSModulePath** environment variable if it is not there yet
 * Install Chrome, PhantomJS or another web browser you intend to use
 * Load the module as
