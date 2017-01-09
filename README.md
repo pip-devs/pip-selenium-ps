@@ -1,4 +1,4 @@
-# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Selenium WebDriver module for PowerShell
+# <img src="https://github.com/pip-devs/pip-selenium-ps/raw/master/artifacts/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Selenium WebDriver module for PowerShell
 
 This PowerShell module provides interface for [Selenium WebDriver](http://www.seleniumhq.org/).
 It can be used for testing web pages or automation of legacy web applications.
