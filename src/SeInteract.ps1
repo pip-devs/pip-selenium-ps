@@ -128,7 +128,16 @@ PS> Send-SeClick -Element $element
         [switch] $Right,
 
         [Parameter(Mandatory=$false)]
-        [switch] $Script
+        [switch] $Script,
+
+        [Parameter(Mandatory=$false)]
+        [switch] $MoveByOffset,
+
+        [Parameter(Mandatory=$false)]
+        [int] $XOffset,
+
+        [Parameter(Mandatory=$false)]
+        [int] $YOffset
     )
     begin {}
     process 
@@ -151,6 +160,10 @@ PS> Send-SeClick -Element $element
                 $action = New-Object -TypeName  OpenQA.Selenium.Interactions.Actions -ArgumentList $Element.WrappedDriver
                 $null = $action.MoveToElement($Element).Click().Perform()
             }
+        }
+        if ($MoveByOffset) {
+            $action = New-Object -TypeName  OpenQA.Selenium.Interactions.Actions -ArgumentList $Element.WrappedDriver
+            $null = $action.MoveToElement($Element, $XOffset, $YOffset).Click().Perform()
         }
         else
         {
