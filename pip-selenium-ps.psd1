@@ -51,7 +51,8 @@ ProcessorArchitecture = ''
 RequiredModules = @()
 
 # Assemblies that must be loaded prior to importing this module
-RequiredAssemblies = @('lib/Selenium.WebDriverBackedSelenium.dll', 'lib/ThoughtWorks.Selenium.Core.dll', 'lib/WebDriver.dll', 'lib/WebDriver.Support.dll')
+#RequiredAssemblies = @('lib/Selenium.WebDriverBackedSelenium.dll', 'lib/ThoughtWorks.Selenium.Core.dll', 'lib/WebDriver.dll', 'lib/WebDriver.Support.dll')
+RequiredAssemblies = @('lib/Selenium.WebDriverBackedSelenium.dll', 'lib/WebDriver.dll', 'lib/WebDriver.Support.dll', 'lib/Newtonsoft.Json.dll')
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module
 ScriptsToProcess = @()
