@@ -43,7 +43,9 @@ PS> $driver = Start-SeDriver -Type "chrome"
     param
     (
         [Parameter(Mandatory=$true, Position = 0, ValueFromPipelineByPropertyName=$true)]
-        [string] $Type = 'phantomjs'
+        [string] $Type = 'phantomjs',
+        [Parameter(Mandatory=$false, Position = 1)]
+        [string] $Url = $null
     )
     begin {}
     process 
@@ -57,6 +59,10 @@ PS> $driver = Start-SeDriver -Type "chrome"
             $service.HideCommandPromptWindow = $true;
 
             $driver = New-Object OpenQA.Selenium.PhantomJS.PhantomJSDriver
+
+            if ($Url -ne $null) {
+                $driver.Url = $Url
+            }
         }
         elseif ($Type -eq 'CHROME')
         {
