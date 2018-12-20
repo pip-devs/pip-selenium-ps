@@ -161,7 +161,7 @@ PS> Send-SeClick -Element $element
                 $null = $action.MoveToElement($Element).Click().Perform()
             }
         }
-        if ($MoveByOffset) {
+        elseif ($MoveByOffset) {
             $action = New-Object -TypeName  OpenQA.Selenium.Interactions.Actions -ArgumentList $Element.WrappedDriver
             $null = $action.MoveToElement($Element, $XOffset, $YOffset).Click().Perform()
         }
