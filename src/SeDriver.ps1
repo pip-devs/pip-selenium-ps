@@ -68,6 +68,16 @@ PS> $driver = Start-SeDriver -Type "chrome"
         {
             $driver = New-Object OpenQA.Selenium.Chrome.ChromeDriver
         }
+        elseif ($Type -eq 'CHROME-HEADLESS')
+        {
+            $options = New-Object OpenQA.Selenium.Chrome.ChromeOptions
+            $options.AddArguments("--no-sandbox")
+            $options.AddArguments("--headless")
+            #$options.AddArguments("--disable-dev-shm-usage")
+            #$options.AddArguments("--disable-gpu")
+            #$options.AddArguments("--disable-extensions")
+            $driver = New-Object OpenQA.Selenium.Chrome.ChromeDriver($options)
+        }
         else
         {
             throw 'Unknown or unsupported webdriver ' + $Type
