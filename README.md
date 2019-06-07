@@ -29,6 +29,7 @@ The module allows to perform most operations supported by .NET web driver:
 * **Move-SeForward** - Moves forward through page history
 * **Open-SePage** - Opens a new page by url
 * **Reset-SePage** - Refreshes the current page
+* **Save-SeScreenshot** - Saves current page screenshot as a file
 * **Select-SeDriver** - Selects default web driver
 * **Send-SeAlertAccept** - Accepts alert popup
 * **Send-SeAlertDismiss** - Dismisses alert popup

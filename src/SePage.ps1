@@ -115,3 +115,51 @@ PS> Get-SePageSource
     }
     end {}
 }
+
+function Save-SeScreenshot
+{
+<#
+.SYNOPSIS
+
+Save current page screenshot as a file
+
+.DESCRIPTION
+
+Save-SeScreenshot save current page screenshot as a file
+
+.PARAMETER Driver
+
+An optional object reference to started selenium web driver (Default: current driver)
+
+.PARAMETER OutName
+
+An output screenshot file name (Default: screenshot.png)
+
+.EXAMPLE
+
+PS> Save-SeScreenshot
+
+#>
+    [CmdletBinding()]
+    param
+    (
+        [Parameter(Position=0, Mandatory=$false, ValueFromPipelineByPropertyName=$true)]
+        [OpenQA.Selenium.IWebDriver] $Driver,
+
+        [Parameter(Position=1, Mandatory=$false, ValueFromPipelineByPropertyName=$true)]
+        [string] $OutName = "screenshot.png"
+    )
+    begin {}
+    process 
+    {
+        $Driver = if ($Driver -ne $null) {$Driver} else {$SeDriver}
+
+        # Save file to current directory if passed only file name, without full path
+        if (($OutName.IndexOf("\") -eq -1) -and ($OutName.IndexOf("/") -eq -1)){
+            $OutName = (Resolve-Path .\).Path + $OutName
+        }
+
+        $Driver.GetScreenshot().SaveAsFile($OutName)
+    }
+    end {}
+}
